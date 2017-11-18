@@ -7,7 +7,7 @@
     "watch:test": "npm run test -- --watch",
     "cover": "nyc npm run test",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "start": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development nodemon index.js",
+    "start": "cross-env NODE_ENV=production MONGO_URL=mongodb://<dbuser>:<dbpassword>@ds155820.mlab.com:55820/heroku_svtbpspw node index.js",
     "start:prod": "cross-env NODE_ENV=production node index.js",
     "bs": "npm run clean && npm run build && npm run build:server && npm run start:prod",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -50,9 +50,7 @@
     "react-router": "^2.4.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "sanitize-html": "^1.11.4"
-  },
-  "devDependencies": {
+    "sanitize-html": "^1.11.4",
     "ava": "^0.15.2",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
@@ -110,6 +108,9 @@
     "webpack-externals-plugin": "^1.0.0",
     "webpack-hot-middleware": "^2.10.0",
     "webpack-manifest-plugin": "^1.0.1"
+  },
+  "devDependencies": {
+    
   },
   "engines": {
     "node": ">=4"
