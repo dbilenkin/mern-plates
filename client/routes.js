@@ -39,5 +39,13 @@ export default (
         });
       }}
     />
+    <Route
+      path="/test"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Test/pages/TestPage').default);
+        });
+      }}
+    />
   </Route>
 );
