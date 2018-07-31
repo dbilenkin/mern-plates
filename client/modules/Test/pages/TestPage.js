@@ -9,7 +9,7 @@ import stateData from '../data/stateData.json';
 class Test extends Component {
   constructor(props) {
     super(props);
-    console.log(stateData);
+    //console.log(stateData);
     const selected = { selected: false };
     Object.keys(stateData).forEach(key => {
       stateData[key].selected = false;
@@ -18,12 +18,12 @@ class Test extends Component {
     this.state = {
       states: Object.values(stateData)
     };
-    console.log(this.state.states);
+    //console.log(this.state.states);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(value) {
-    console.log("handleClick state: " + JSON.stringify(this.state.states));
+    //console.log("handleClick state: " + JSON.stringify(this.state.states));
     let states = [...this.state.states];
     states = states.map(state => {
       if (state.id === value.target.id) {
